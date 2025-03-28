@@ -1,21 +1,25 @@
 import { Outlet } from "react-router-dom";
 import cls from "./MainLayout.module.scss";
+import { Header } from "@/components/Header";
 
 const MainLayout = () => {
-	return <div id="app" className="app">
-		<p>Header</p>
-		<main className={cls.main}>
-			<div className={cls.container}>
-				<div className={cls.body}>
-					<p>Navbar</p>
+  return (
+    <div id="app" className="app app_light">
+      <Header />
 
-					<Outlet/>
-				</div>
-			</div>
-		</main>
+      <main className={cls.main}>
+        <div className={cls.container}>
+          <div className={cls.body}>
+            <p>Navbar</p>
 
-		<p>Footer</p>
-	</div>;
-}
+            <Outlet />
+          </div>
+        </div>
+      </main>
 
-export { MainLayout }
+      <p>Footer</p>
+    </div>
+  );
+};
+
+export { MainLayout };
